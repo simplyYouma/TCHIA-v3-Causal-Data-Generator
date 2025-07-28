@@ -1,0 +1,113 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Rapport Validation TCHIA V3</title>
+            <meta charset="utf-8">
+            <style>
+                body { font-family: Arial, sans-serif; margin: 40px; }
+                h1 { color: #2c3e50; }
+                h2 { color: #34495e; }
+                .score-excellent { color: green; font-weight: bold; }
+                .score-good { color: orange; font-weight: bold; }
+                .score-poor { color: red; font-weight: bold; }
+                table { border-collapse: collapse; width: 100%; }
+                th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+                th { background-color: #f2f2f2; }
+                .summary-box { 
+                    background-color: #ecf0f1; 
+                    padding: 20px; 
+                    border-radius: 10px;
+                    margin: 20px 0;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Rapport de Validation - Cohérence Causale TCHIA V3</h1>
+            <p>Date : 2025-06-21T21:13:05.782606</p>
+            <p>Nombre de lignes : 1000</p>
+            
+            <div class="summary-box">
+                <h2>Résumé Exécutif</h2>
+                <p>Score de cohérence : <span class="score-good">86.9%</span></p>
+                <p>Qualité globale : <strong>GOOD</strong></p>
+                <p>Recommandation : Dataset utilisable. Quelques incohérences mineures à surveiller.</p>
+            </div>
+            
+            <h2>Tests de Cohérence Causale</h2>
+            <table>
+                <tr>
+                    <th>Test</th>
+                    <th>Taux de réussite</th>
+                    <th>Échecs</th>
+                </tr>
+        
+                <tr>
+                    <td>Stress Yield</td>
+                    <td class="score-poor">40.0%</td>
+                    <td>600</td>
+                </tr>
+            
+                <tr>
+                    <td>Rainfall Effectiveness</td>
+                    <td class="score-excellent">100.0%</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>Temporal Consistency</td>
+                    <td class="score-excellent">100.0%</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>Farmer Decisions</td>
+                    <td class="score-excellent">100.0%</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>Ndvi Biomass</td>
+                    <td class="score-good">81.1%</td>
+                    <td>189</td>
+                </tr>
+            
+                <tr>
+                    <td>Scenario Consistency</td>
+                    <td class="score-excellent">100.0%</td>
+                    <td>0</td>
+                </tr>
+            
+            </table>
+            
+            <h2>Analyse des Distributions</h2>
+            <h3>Rendements par culture</h3>
+            <table>
+                <tr>
+                    <th>Culture</th>
+                    <th>Moyenne observée</th>
+                    <th>Moyenne référence</th>
+                    <th>Écart</th>
+                    <th>Validation</th>
+                </tr>
+        
+                <tr>
+                    <td>mil</td>
+                    <td>555.5 kg/ha</td>
+                    <td>550 kg/ha</td>
+                    <td>1.0%</td>
+                    <td>✅</td>
+                </tr>
+            
+                <tr>
+                    <td>sorgho</td>
+                    <td>694.3 kg/ha</td>
+                    <td>680 kg/ha</td>
+                    <td>2.1%</td>
+                    <td>❌</td>
+                </tr>
+            
+            </table>
+        </body>
+        </html>
+        

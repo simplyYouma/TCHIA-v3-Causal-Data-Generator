@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "date": "2025-06-21T21:13:05.782606",
+    "n_rows": 1000,
+    "n_columns": 46,
+    "crops": [
+      "mil",
+      "sorgho"
+    ],
+    "scenarios": {
+      "exceptional": 200,
+      "good": 200,
+      "average": 200,
+      "difficult": 200,
+      "catastrophic": 200
+    }
+  },
+  "coherence_tests": {
+    "stress_yield": {
+      "pass_rate": 40.0,
+      "n_failures": 600,
+      "failures": [
+        {
+          "row": 1,
+          "message": "Stress modéré (1.17) mais perte insuffisante (13.3%)",
+          "severity": "CRITICAL"
+        },
+        {
+          "row": 2,
+          "message": "Stress très sévère (5.26) mais perte insuffisante (25.0%)",
+          "severity": "CRITICAL"
+        },
+        {
+          "row": 3,
+          "message": "Stress très sévère (6.38) mais perte insuffisante (33.3%)",
+          "severity": "CRITICAL"
+        },
+        {
+          "row": 6,
+          "message": "Stress modéré (1.17) mais perte insuffisante (13.3%)",
+          "severity": "CRITICAL"
+        },
+        {
+          "row": 7,
+          "message": "Stress très sévère (5.26) mais perte insuffisante (25.0%)",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    "rainfall_effectiveness": {
+      "pass_rate": 100.0,
+      "n_failures": 0,
+      "failures": []
+    },
+    "temporal_consistency": {
+      "pass_rate": 100.0,
+      "n_failures": 0,
+      "failures": []
+    },
+    "farmer_decisions": {
+      "pass_rate": 100.0,
+      "n_failures": 0,
+      "failures": []
+    },
+    "ndvi_biomass": {
+      "pass_rate": 81.1,
+      "n_failures": 189,
+      "failures": [
+        {
+          "row": 0,
+          "message": "Harvest Index hors tolérances (0.428) pour mil",
+          "severity": "HIGH"
+        },
+        {
+          "row": 1,
+          "message": "Harvest Index hors tolérances (0.146) pour sorgho",
+          "severity": "HIGH"
+        },
+        {
+          "row": 10,
+          "message": "Harvest Index hors tolérances (0.408) pour mil",
+          "severity": "HIGH"
+        },
+        {
+          "row": 19,
+          "message": "Harvest Index hors tolérances (0.033) pour sorgho",
+          "severity": "HIGH"
+        },
+        {
+          "row": 25,
+          "message": "Harvest Index hors tolérances (0.406) pour mil",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "scenario_consistency": {
+      "pass_rate": 100.0,
+      "n_failures": 0,
+      "failures": []
+    }
+  },
+  "distribution_analysis": {
+    "yields": {
+      "mil": {
+        "observed_mean": 555.5,
+        "reference_mean": 550,
+        "mean_diff_percent": 1.0,
+        "observed_cv": 0.327,
+        "reference_cv": 0.327,
+        "mean_validated": true,
+        "cv_validated": true,
+        "overall_valid": true
+      },
+      "sorgho": {
+        "observed_mean": 694.3,
+        "reference_mean": 680,
+        "mean_diff_percent": 2.1,
+        "observed_cv": 0.744,
+        "reference_cv": 0.324,
+        "mean_validated": true,
+        "cv_validated": false,
+        "overall_valid": false
+      }
+    },
+    "correlations": {
+      "rainfall_yield_mil": {
+        "observed": -0.733,
+        "expected": 0.72,
+        "validated": false
+      },
+      "rainfall_yield_sorgho": {
+        "observed": 0.747,
+        "expected": 0.68,
+        "validated": true
+      },
+      "ndvi_yield": {
+        "observed": 0.869,
+        "expected_range": [
+          0.65,
+          0.88
+        ],
+        "validated": true
+      },
+      "stress_loss": {
+        "observed": 0.823,
+        "expected": ">0.7",
+        "validated": true
+      }
+    },
+    "stress_frequencies": {
+      "water": {
+        "observed": {
+          "moderate": 0.5,
+          "mild": 0.25,
+          "severe": 0.25
+        },
+        "reference": {
+          "none": 0.1,
+          "mild": 0.3,
+          "moderate": 0.4,
+          "severe": 0.2
+        },
+        "total_deviation": 0.3,
+        "validated": true
+      },
+      "temp": {
+        "observed": {
+          "mild": 0.75,
+          "moderate": 0.126,
+          "none": 0.124
+        },
+        "reference": {
+          "none": 0.25,
+          "mild": 0.35,
+          "moderate": 0.3,
+          "severe": 0.1
+        },
+        "total_deviation": 0.8,
+        "validated": false
+      }
+    }
+  },
+  "summary": {
+    "coherence_score": 86.9,
+    "distribution_score": 50.0,
+    "overall_quality": "GOOD",
+    "recommendation": "Dataset utilisable. Quelques incohérences mineures à surveiller."
+  }
+}
